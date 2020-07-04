@@ -1,6 +1,5 @@
 //include .env file as environment
 require('dotenv').config();
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -11,23 +10,23 @@ const config = require('./src/config/config');
 
 const app = express();
 
-//mongoose settings
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useUnifiedTopology', true);
-
 //db connection
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  })
 .then(db => console.log('Database connected'))
   .catch(err => console.log(err));
 
-//middlewares
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 // settings
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');
+
+//middlewares
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //routes
 app.use(config.baseUrl, routes);

@@ -1,12 +1,12 @@
 const express = require('express');
 const Record = require('../../schemas/models/record');
+const responseHelper = require('../../constants/response-helper')
 const router = express.Router();
 
-router.post('/records', async (req, res) => {
-    const records = await Record.find();
-    res.render('index', {
-      records
-    });
-  });
+router.get('/records', async (req, res) => {
+    console.log('buraya girmiyor');
+    const records = await Record.find().exec();
+    res.send(records);
+});
 
-module.exports = router;
+module.exports = router; 
