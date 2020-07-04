@@ -4,9 +4,15 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const indexRoutes = require('./src/server/routes/index');
+
+const routes = require('./src/server/routes/index');
+const config = require('./src/config/config');
 
 const app = express();
+
+//mongoose settings
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useUnifiedTopology', true);
 
 //db connection
 mongoose.connect(process.env.MONGODB_URI)
@@ -20,8 +26,8 @@ app.use(bodyParser.json());
 // settings
 app.set('port', process.env.PORT || 3000);
 
-// routes
-app.use('/', indexRoutes);
+//routes
+app.use(config.baseUrl, routes);
 
 //serve
 app.listen(app.get('port'), () => {

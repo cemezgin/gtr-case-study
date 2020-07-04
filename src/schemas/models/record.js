@@ -7,4 +7,4 @@ const RecordSchema = Schema({
   totalCount: Number
 });
 
-module.exports = mongoose.model('records', TaskSchema);
+module.exports = mongoose.model('records', RecordSchema);
