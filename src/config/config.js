@@ -1,4 +1,4 @@
 
-module.exports  = {
-	baseUrl: '/api/v1/',
+module.exports = {
+  baseUrl: '/api/v1/'
 }
