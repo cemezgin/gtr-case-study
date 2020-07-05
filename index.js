@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path')
 
-const routes = require('./src/server/routes/index')
+const routes = require('./src/server/routes')
 const config = require('./src/config/config')
 
 const app = express()
