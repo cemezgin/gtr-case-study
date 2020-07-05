@@ -5,6 +5,6 @@ module.exports = class RecordController {
   }
 
   async get (query) {
-    return this.recordService.find(query)
+    return this.recordService.findFiltered(query)
   }
 }

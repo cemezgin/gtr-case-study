@@ -4,7 +4,7 @@ module.exports = class RecordRepository {
     this.recordModel = recordModel
   }
 
-  async findAll (query) {
-    return this.recordModel.find({}).lean()
+  async find (query) {
+    return this.recordModel.find(query).lean()
   }
 }
