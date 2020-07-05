@@ -1,15 +1,9 @@
 // include .env file as environment
 require('dotenv').config()
 
-const express = require('express')
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path')
-
-const routes = require('./src/server/routes')
-const config = require('./src/config/config')
-
-const app = express()
+const server = require('./src/server')
 
 // db connection
 mongoose.connect(process.env.MONGODB_URI, {
@@ -20,18 +14,11 @@ mongoose.connect(process.env.MONGODB_URI, {
   .catch(err => console.log(err))
 
 // settings
-app.set('port', process.env.PORT || 3000)
-app.set('views', path.join(__dirname, '/src/views'))
-app.set('view engine', 'ejs')
-
-// middlewares
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
-
-// routes
-app.use(config.baseUrl, routes)
+server.set('port', process.env.PORT || 3000)
+server.set('views', path.join(__dirname, '/src/views'))
+server.set('view engine', 'ejs')
 
 // serve
-app.listen(app.get('port'), () => {
-  console.log(`Server listening on port ${app.get('port')}`)
+server.listen(server.get('port'), () => {
+  console.log(`Server listening on port ${server.get('port')}`)
 })
