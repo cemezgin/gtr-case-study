@@ -4,7 +4,7 @@ const supertest = require('supertest')
 const request = supertest(app)
 
 require('dotenv').config()
-// jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
+
 beforeAll(async () => {
   mongoose.connect(process.env.MONGODB_TEST_URI, {
     useNewUrlParser: true,
