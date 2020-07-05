@@ -8,7 +8,7 @@
     "test": "jest -c jest.config.js --runInBand --detectOpenHandles --forceExit",
     "dev": "nodemon server.js",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "husky": {
     "hooks": {
