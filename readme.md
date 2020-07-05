@@ -15,6 +15,7 @@ Before the starting application .env file should be create. You need two db for 
 #### Development
 In local machine this command is for start application
 
+    npm install
     npm run dev
  #### Test
  Test the code with Jest
