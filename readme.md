@@ -12,6 +12,8 @@ Before the starting application .env file should be create. Parameters can be fo
 
 >mongodb+srv://challengeUser:< password >@challenge-xzwqd.h8adk.mongodb.net/test?retryWrites=true&w=majority
 
+*password is given in the case document as in mongo uri
+
 #### Development
 In local machine this command is for start application
 
