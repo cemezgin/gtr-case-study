@@ -4,7 +4,7 @@ module.exports = class RecordRepository {
     this.recordModel = recordModel
   }
 
-  async find (query) {
+  async findFilteredBetweenDatesAndCounts (query) {
     return this.recordModel.find({
       createdAt: {
         $gte: new Date(query.startDate),

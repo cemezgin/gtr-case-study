@@ -4,7 +4,7 @@ module.exports = class RecordController {
     this.recordService = recordService
   }
 
-  async get (query) {
-    return this.recordService.findFiltered(query)
+  async getBetweenDateAndCountRanges (request) {
+    return this.recordService.findFilteredBetweenDatesAndCounts(request.body)
   }
 }

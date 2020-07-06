@@ -4,9 +4,9 @@ const JoiDate = require('@hapi/joi-date')
 const Joi = JoiBase.extend(JoiDate)
 
 const recordValidate = Joi.object().keys({
-  startDate: Joi.date().format('YYYY-MM-DD').utc().required(),
+  startDate: Joi.date().format('YYYY-MM-DD').utc().max(Joi.ref('endDate')).required(),
   endDate: Joi.date().format('YYYY-MM-DD').utc().required(),
-  minCount: Joi.number().required(),
+  minCount: Joi.number().max(Joi.ref('maxCount')).required(),
   maxCount: Joi.number().required()
 })
 
