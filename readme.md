@@ -53,5 +53,5 @@ This application currently usable and works on AWS EC2.
     }'
 #### API Doc
 
-        http://ec2-35-159-5-227.eu-central-1.compute.amazonaws.com:3000/documentation/
+  http://ec2-35-159-5-227.eu-central-1.compute.amazonaws.com:3000/documentation/
 
