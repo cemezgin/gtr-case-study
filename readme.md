@@ -12,9 +12,9 @@ Before the starting application .env file should be created. Parameters can be f
 
 >mongodb+srv://challengeUser:< password >@challenge-xzwqd.h8adk.mongodb.net/test?retryWrites=true&w=majority
 
-<b>*password is given in the case document as in mongo uri<b>
+<b>*password is given in the case document as in mongo uri</b>
 
-#### Development
+### Development
 In local machine this command is for start application
 
     npm install
