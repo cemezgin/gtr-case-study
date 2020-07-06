@@ -6,13 +6,13 @@ These instructions will get you a copy of the project up and running on your loc
 This application written with Node.js and Express framework.
 
 #### Environment
-Before the starting application .env file should be create. Parameters can be found in .env.example file. You need two db for this case. One of them for the production, other one is for the test.
+Before the starting application .env file should be created. Parameters can be found in .env.example file. You need two db for this case. One of them for the production, other one is for the test.
 
 >mongodb+srv://challengeUser:< password >@challenge-xzwqd.h8adk.mongodb.net/getir-case-study?retryWrites=true&w=majority
 
 >mongodb+srv://challengeUser:< password >@challenge-xzwqd.h8adk.mongodb.net/test?retryWrites=true&w=majority
 
-*password is given in the case document as in mongo uri
+<b>*password is given in the case document as in mongo uri<b>
 
 #### Development
 In local machine this command is for start application
