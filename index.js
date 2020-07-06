@@ -20,7 +20,7 @@ server.set('port', process.env.PORT || 3000)
 server.set('views', path.join(__dirname, '/src/views'))
 server.set('view engine', 'ejs')
 
-server.use('/documentation', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+server.use('/documentation', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 // serve
 server.listen(server.get('port'), () => {

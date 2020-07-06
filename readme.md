@@ -51,4 +51,7 @@ This application currently usable and works on AWS EC2.
     	"minCount": 1000,
     	"maxCount": 3000
     }'
+#### API Doc
+
+        http://ec2-35-159-5-227.eu-central-1.compute.amazonaws.com:3000/documentation/
 
