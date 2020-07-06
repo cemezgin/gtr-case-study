@@ -5,6 +5,6 @@ module.exports = class RecordController {
   }
 
   async getBetweenDateAndCountRanges (request) {
-    return this.recordService.findFilteredBetweenDatesAndCounts(request.body)
+    return this.recordService.findBetweenDatesAndCounts(request.body)
   }
 }

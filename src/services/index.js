@@ -4,7 +4,7 @@ module.exports = class RecordService {
     this.recordRepository = recordRepository
   }
 
-  async findFilteredBetweenDatesAndCounts (query) {
-    return this.recordRepository.findFilteredBetweenDatesAndCounts(query)
+  async findBetweenDatesAndCounts (query) {
+    return this.recordRepository.findBetweenDatesAndCounts(query)
   }
 }

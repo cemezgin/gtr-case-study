@@ -4,15 +4,17 @@ module.exports = class RecordRepository {
     this.recordModel = recordModel
   }
 
-  async findFilteredBetweenDatesAndCounts (query) {
+  async findBetweenDatesAndCounts (query) {
+    const {startDate, endDate , maxCount, minCount} = query;
+
     return this.recordModel.find({
       createdAt: {
-        $gte: new Date(query.startDate),
-        $lt: new Date(query.endDate)
+        $gte: new Date(startDate),
+        $lt: new Date(endDate)
       },
       totalCount: {
-        $gt: query.minCount,
-        $lt: query.maxCount
+        $gt: minCount,
+        $lt: maxCount
       }
     }).lean()
   }
