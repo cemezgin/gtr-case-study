@@ -6,13 +6,11 @@ const server = express()
 const swaggerUI = require('swagger-ui-express')
 const swaggerDocument = require('../../swagger.json')
 const responseHelper = require('../utils/response-helper')
-const { RESPONSE_CODE_BAD_REQUEST} = require('../constants')
-
-
+const { RESPONSE_CODE_BAD_REQUEST } = require('../constants')
 
 const jsonErrorHandler = async (err, req, res, next) => {
-    res.status(400).send(responseHelper.getStandardResponse(RESPONSE_CODE_BAD_REQUEST, err.type));
-  }
+  res.status(400).send(responseHelper.getStandardResponse(RESPONSE_CODE_BAD_REQUEST, err.type))
+}
 
 // middlewares
 server.use(bodyParser.urlencoded({ extended: true }))
