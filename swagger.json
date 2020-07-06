@@ -1,0 +1,102 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "",
+      "version": "1.0.0",
+      "title": "Getir Case Study API Doc"
+    },
+    "host": "ec2-35-159-5-227.eu-central-1.compute.amazonaws.com:3000",
+    "basePath": "/api/v1/",
+    "tags": [
+      {
+        "name": "Record"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/records": {
+        "post": {
+          "summary": "Get filtered records from db",
+          "description": "",
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/ApiBody"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse"
+              }
+            },
+            "422": {
+              "description": "Unprocessable Entity"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Record": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "records": {
+            "type": "object"
+          }
+        }
+      },
+      "ApiBody": {
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "format": "YYYY-MM-DD"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "YYYY-MM-DD"
+          },
+          "minCount": {
+            "type": "integer"
+          },
+          "maxCount": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
